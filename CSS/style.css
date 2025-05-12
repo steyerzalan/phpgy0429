@@ -1,0 +1,47 @@
+/* Táblázat stílusa */
+.tabla {
+    border-collapse: collapse; /*a szomszédos cellák határai osszeplvadnak, nem duplázódik a vonal */
+    margin: 20px auto; /* Felül és alul 20px margó, középre igazítás vizszintesen (auto) */
+    width: 80px;
+    font-family: Arial, Helvetica, sans-serif;
+    table-layout: fixed; /* oszlopok fix szélességűek lesznek, függetlenül a tartalom hosszától */
+}
+
+/* Fejléc cellák stílusa (th elemek) */
+.fejlec {
+    background-color: var(--fejlec-hatter); /* !!!!! Fejléc háttérszín CSS változóból */
+    padding: 10px; /* belső margó */
+    color: white;
+    font-weight: bold; /* félkövér betű stílus */
+    text-align: center; 
+}
+
+.cella {
+    border: 1px solid #ccc; /* cella körüli keret */
+    padding: var(--cella-padding); /* !!!!! Cellák belső margója dinamikus CSS változóból */
+    text-align: center;
+    color: var(--cella-szin); /* !!!!! Szöveg színe dinamikusan CSS változóból */
+    overflow: hidden; /* ha a szöveg hosszabb, mint a cella, akkor elrejtjük a kilógó részt */
+}
+
+/* tabletekhez (közepes méretű képernyőkhöz) */
+@media (max-width: 768px) {
+    .tabla {
+        width: 100%;
+        font-size: 14px; 
+    }
+
+    .feljec, .cella {
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tabla {
+        font-size: 12px; 
+    }
+
+    .feljec, .cella {
+        padding: 6px;
+    }
+}
