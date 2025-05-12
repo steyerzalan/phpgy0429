@@ -5,11 +5,11 @@ $g = 0;
 $b = 0;
 
 /* feldolgoz */
-if ($_SERVER['REQUEST-METHOD']==='POST')
+if ($_SERVER['REQUEST_METHOD']==='POST')
 {
     //Űrlapon átküldött $r érték számmá lesz alakítva és csak 0-255 értékű lehet
     $r=max(0, min(255, (int)$_POST['r']));
-    
+
     $g=max(0, min(255, (int)$_POST['g']));
     $b=max(0, min(255, (int)$_POST['b']));
 }
